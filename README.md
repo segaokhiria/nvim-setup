@@ -4,4 +4,11 @@
 ```
 git clone git@github.com:segaokhiria/nvim-setup.git ~/.config/nvim
 ```
-4. Open nvim and run `:PackerSync`
+
+4. install the lsp servers you need to work with. e.g:
+* `gem install ruby-lsp` for ruby
+etc
+
+5. Open nvim and run `:PackerSync`
+
+
