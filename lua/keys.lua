@@ -48,4 +48,4 @@ map({'n', 'v'}, '<leader><leader>c', [[:HopChar1<CR>]])
 map({'n', 'v'}, '<leader><leader>/', [[:HopPattern<CR>]])
 
 -- Undo tree
-map('n', '<C-u>', vim.cmd.UndotreeToggle)
+map('n', '<space>u', vim.cmd.UndotreeToggle)

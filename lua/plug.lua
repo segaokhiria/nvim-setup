@@ -23,7 +23,10 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons'        -- filesystem icons
     }
 
-    -- use 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' }
+    -- better highlighting
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    -- For: history tree, to be able to navigate undo/redo
     use 'mbbill/undotree'
 
     -- For: Cursor jump indicator
