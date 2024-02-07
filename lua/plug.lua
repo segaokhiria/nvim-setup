@@ -65,26 +65,46 @@ return require('packer').startup(function(use)
     }
 
     -- LSP install setup
-    use {
-      'VonHeikemen/lsp-zero.nvim',
-      branch = 'v2.x',
-      requires = {
-        -- LSP Support
-        {'neovim/nvim-lspconfig'},             -- Required
-        {                                      -- Optional
-          'williamboman/mason.nvim',
-          run = function()
-            pcall(vim.cmd, 'MasonUpdate')
-          end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+    use 'williamboman/mason.nvim'    
+    use 'williamboman/mason-lspconfig.nvim'
+    use 'neovim/nvim-lspconfig' 
+    use 'simrat39/rust-tools.nvim'
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-      }
-    }
+    -- Completion framework:
+    use 'hrsh7th/nvim-cmp' 
+
+    -- LSP completion source:
+    use 'hrsh7th/cmp-nvim-lsp'
+
+    -- Useful completion sources:
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
+    use 'hrsh7th/cmp-vsnip'                             
+    use 'hrsh7th/cmp-path'                              
+    use 'hrsh7th/cmp-buffer'                            
+    use 'hrsh7th/vim-vsnip'
+
+    use 'preservim/tagbar'
+--    use {
+--      'VonHeikemen/lsp-zero.nvim',
+--      branch = 'v2.x',
+--      requires = {
+--        -- LSP Support
+--        {'neovim/nvim-lspconfig'},             -- Required
+--        {                                      -- Optional
+--          'williamboman/mason.nvim',
+--          run = function()
+--            pcall(vim.cmd, 'MasonUpdate')
+--          end,
+--        },
+--        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+--
+--        -- Autocompletion
+--        {'hrsh7th/nvim-cmp'},     -- Required
+--        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+--        {'L3MON4D3/LuaSnip'},     -- Required
+--      }
+--    }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

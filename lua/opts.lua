@@ -1,6 +1,7 @@
 --[[ opts.lua ]]
 local opt = vim.opt
 local cmd = vim.api.nvim_command
+local api = vim.api
 
 -- [[ Context ]]
 opt.colorcolumn = '100'          -- str:  Show col for max line length
@@ -34,3 +35,31 @@ opt.tabstop = 4                  -- num:  Number of spaces tabs count for
 -- [[ Splits ]]
 opt.splitright = true            -- bool: Place new window to right of current one
 opt.splitbelow = true            -- bool: Place new window below the current one
+
+-- [[ Folding ]]
+opt.foldenable = false              -- bool: No fold by default
+
+--Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force to select one from the menu
+-- shortness: avoid showing extra messages when using completion
+-- updatetime: set updatetime for CursorHold
+opt.completeopt = {'menuone', 'noselect', 'noinsert'}
+opt.shortmess = vim.opt.shortmess + { c = true}
+api.nvim_set_option('updatetime', 300) 
+
+-- Fixed column for diagnostics to appear
+-- Show autodiagnostic popup on cursor hover_range
+-- Goto previous / next diagnostic warning / error 
+-- Show inlay_hints more frequently 
+cmd([[
+set signcolumn=yes
+autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+]])
+
+-- [[Treesitter folding]]
+-- connect nvim folding to tree-sitter folding
+vim.wo.foldmethod = 'expr'
+vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'

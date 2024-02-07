@@ -27,9 +27,11 @@ map('n', '<space>n', ":NvimTreeToggle<CR>")
 -- Telescope find files
 map('n', '<space>fo', [[:Telescope oldfiles<CR>]])
 map('n', '<space>ff', [[:Telescope find_files<CR>]])
-map('n', '<space>fg', [[:Telescope live_grep<CR>]])
+map('n', '<space>f/', [[:Telescope live_grep<CR>]])
 map('n', '<space>fb', [[:Telescope buffers<CR>]])
 map('n', '<space>fh', [[:Telescope help_tags<CR>]])
+
+map('n', '<leader>tt', [[:TagbarToggle<CR>]])
 
 -- Buffer navigation
 map('n', '<C-b>', [[:bp<CR>]]) -- previous
