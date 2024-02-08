@@ -84,7 +84,10 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'                            
     use 'hrsh7th/vim-vsnip'
 
-    use 'preservim/tagbar'
+    -- Code structure display
+    use 'stevearc/aerial.nvim'
+    --use 'preservim/tagbar'
+
 --    use {
 --      'VonHeikemen/lsp-zero.nvim',
 --      branch = 'v2.x',

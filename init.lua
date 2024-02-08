@@ -104,7 +104,6 @@ require("mason").setup({
 })
 require("mason-lspconfig").setup()
 
-
 local rt = require("rust-tools")
 rt.setup({
     server = {
@@ -200,5 +199,13 @@ cmp.setup({
             item.menu = menu_icon[entry.source.name]
             return item
         end,
+    },
+})
+
+
+require("aerial").setup({
+    backends = { "lsp", "treesitter" },
+    layout = {
+        default_direction = "prefer_right",
     },
 })

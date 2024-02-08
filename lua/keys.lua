@@ -31,7 +31,7 @@ map('n', '<space>f/', [[:Telescope live_grep<CR>]])
 map('n', '<space>fb', [[:Telescope buffers<CR>]])
 map('n', '<space>fh', [[:Telescope help_tags<CR>]])
 
-map('n', '<leader>tt', [[:TagbarToggle<CR>]])
+map('n', '<space>t', [[:AerialToggle<CR>]])
 
 -- Buffer navigation
 map('n', '<C-b>', [[:bp<CR>]]) -- previous
@@ -45,7 +45,6 @@ map('n', '<leader>gf', [[:GV?<CR>]]) -- entire commit history for current file
 
 -- Hop around
 map({'n', 'v'}, '<leader><leader>w', [[:HopWord<CR>]])
-map({'n', 'v'}, '<leader><leader>b', [[:HopWordB<CR>]])
 map({'n', 'v'}, '<leader><leader>c', [[:HopChar1<CR>]])
 map({'n', 'v'}, '<leader><leader>/', [[:HopPattern<CR>]])
 
