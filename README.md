@@ -18,6 +18,8 @@ git clone https://github.com/segaokhiria/nvim-setup.git ~/.config/nvim
 # brew tap homebrew/cask-fonts <-- This has been deprecated
 brew install font-hack-nerd-font
 ```
+Then make sure you set up your terminal to use the nerd font
+
 5. Install `ripgrep`
 ```
 brew install ripgrep
