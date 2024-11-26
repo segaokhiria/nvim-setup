@@ -4,7 +4,13 @@
 2. Then install packer: `git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim` or see [https://github.com/wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
 3. Extract the content of this into ~/.config/nvim on your laptop.
 ```
+# ssh
 git clone git@github.com:segaokhiria/nvim-setup.git ~/.config/nvim
+
+OR
+
+# https
+git clone https://github.com/segaokhiria/nvim-setup.git ~/.config/nvim 
 ```
 
 4. Install the "Hack Nerd Font" for nvim-tree
